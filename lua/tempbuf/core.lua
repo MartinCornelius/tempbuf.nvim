@@ -45,4 +45,12 @@ function M.load(index)
   vim.api.nvim_buf_set_lines(0, 0, -1, false, snippet.content)
 end
 
+function M.delete(index)
+  store.delete(index)
+end
+
+function M.clear_all()
+  store.clear_all()
+end
+
 return M
