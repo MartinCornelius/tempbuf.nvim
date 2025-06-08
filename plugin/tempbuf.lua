@@ -23,3 +23,8 @@ end, { nargs = 1 })
 vim.api.nvim_create_user_command("TempbufClearAll", function()
   tempbuf.clear_all()
 end, {})
+
+vim.api.nvim_create_user_command("TempbufPick", function()
+  require("tempbuf.ui").pick()
+end, {})
+
