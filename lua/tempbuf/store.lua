@@ -42,6 +42,23 @@ function M.count()
   return #snippets
 end
 
+function M.delete(index)
+  index = tonumber(index)
+  if index and snippets[index] then 
+    table.remove(snippets, index)
+    save_to_disk()
+    print("Deleted snippet #" .. index)
+  else 
+    print("Invalid snippet index")
+  end
+end
+
+function M.clear_all()
+  snippets = {}
+  save_to_disk()
+  print("All tempbuf snippets cleared.")
+end
+
 -- Initilize on plugin load
 load_from_disk()
 

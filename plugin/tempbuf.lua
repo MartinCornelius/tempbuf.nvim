@@ -16,3 +16,10 @@ vim.api.nvim_create_user_command("TempbufLoad", function(opts)
   tempbuf.load(tonumber(opts.args))
 end, { nargs = 1 })
 
+vim.api.nvim_create_user_command("TempbufDelete", function(opts)
+  tempbuf.delete(tonumber(opts.args))
+end, { nargs = 1 })
+
+vim.api.nvim_create_user_command("TempbufClearAll", function()
+  tempbuf.clear_all()
+end, {})
