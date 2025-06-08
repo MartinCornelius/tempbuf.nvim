@@ -53,4 +53,19 @@ function M.clear_all()
   store.clear_all()
 end
 
+function M.run()
+  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+  local filetype = vim.bo.filetype
+
+  if filetype == "python" then
+    local tmp = os.tmpname() .. ".py"
+    local f = io.open(tmp, "w")
+    f:write(table.concat(lines, "\n"))
+    f:close()
+    vim.cmd("split | terminal python3 " .. tmp)
+  else
+    print("TempbufRun: unsupported filetype: " .. filetype)
+  end
+end
+
 return M

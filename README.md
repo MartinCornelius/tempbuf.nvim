@@ -12,6 +12,8 @@ Useful for testing code snippets, writing quick notes, or trying out ideas witho
 - `:TempbufLoad [id]` - Load a previously saved snippet into a new buffer
 - `:TempbufDelete [id]` - Delete a specific snippet
 - `:TempbufClearAll` - Clear all snippets
+- `:TempbufPick` - UI to preview and load snippets
+- `:TempbufRun` - Execute buffer (currently only supports Python)
 
 ## Installation
 
@@ -20,6 +22,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 ```lua
 {
     "martincornelius/tempbuf.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim" },
 }
 ```
 
@@ -32,4 +35,6 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 | `:TempbufLoad 1`   | Load snippet with ID 1                         |
 | `:TempbufDelete 1` | Delete snippet with ID 1                       |
 | `:TempbufClearAll` | Clear all saved snippets                       |
+| `:TempbufPick`     | Preview and load snippets                      |
+| `:TempbufRun`      | Execute temp buffer (supports Python)          |
 

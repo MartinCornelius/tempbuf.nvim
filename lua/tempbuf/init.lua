@@ -6,5 +6,6 @@ M.list = require("tempbuf.core").list
 M.load = require("tempbuf.core").load
 M.delete = require("tempbuf.core").delete
 M.clear_all = require("tempbuf.core").clear_all
+M.run = require("tempbuf.core").run
 
 return M
